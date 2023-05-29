@@ -1,0 +1,6 @@
+# Ignore artifacts:
+coverage
+dist
+docs
+.*ignore
+.vscode/chrome-userdatadir/*
