@@ -3,7 +3,6 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    'vitest-globals/env': true,
   },
   parserOptions: {
     ecmaFeatures: {
@@ -22,8 +21,6 @@ module.exports = {
   extends: [
     'airbnb',
     'next/core-web-vitals',
-    'plugin:vitest-globals/recommended',
-    'plugin:vitest/recommended',
     'plugin:tailwindcss/recommended',
     'plugin:prettier/recommended', // must be at bottom of list
   ],
@@ -33,6 +30,12 @@ module.exports = {
     'import/prefer-default-export': 'off',
 
     'no-param-reassign': 'off', // turned off for immer like produce function
+    'react/function-component-definition': [
+      'error',
+      {
+        namedComponents: 'arrow-function',
+      },
+    ],
 
     'import/order': [
       'error',
@@ -94,6 +97,13 @@ module.exports = {
           },
         },
       },
+    },
+    {
+      files: ['**/?(*.)+(spec|test).[jt]s?(x)'],
+      env: {
+        'vitest-globals/env': true,
+      },
+      extends: ['plugin:vitest-globals/recommended', 'plugin:vitest/recommended', 'plugin:testing-library/react'],
     },
   ],
 };
