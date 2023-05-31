@@ -11,16 +11,10 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  settings: {
-    react: {
-      version: '18.2.0',
-    },
-  },
   ignorePatterns: ['**/node_modules/**'],
   plugins: [],
   extends: [
-    'airbnb',
-    'next/core-web-vitals',
+    'airbnb-base',
     'plugin:tailwindcss/recommended',
     'plugin:prettier/recommended', // must be at bottom of list
   ],
@@ -30,12 +24,6 @@ module.exports = {
     'import/prefer-default-export': 'off',
 
     'no-param-reassign': 'off', // turned off for immer like produce function
-    'react/function-component-definition': [
-      'error',
-      {
-        namedComponents: 'arrow-function',
-      },
-    ],
 
     'import/order': [
       'error',
@@ -55,11 +43,12 @@ module.exports = {
       files: ['**/*.ts', '**/*.tsx'],
       parser: '@typescript-eslint/parser',
       parserOptions: { project: './tsconfig.eslint.json' },
-      extends: ['airbnb-typescript', 'plugin:@typescript-eslint/recommended'],
+      extends: ['airbnb-typescript/base', 'plugin:@typescript-eslint/recommended', 'plugin:solid/typescript'],
       rules: {
         '@typescript-eslint/ban-ts-comment': 'off',
         '@typescript-eslint/consistent-type-imports': 'error',
         '@typescript-eslint/indent': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
 
         // disable rules for '_'
         '@typescript-eslint/no-unused-vars': [

@@ -1,11 +1,21 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /// <reference types="vitest" />
 
-import react from '@vitejs/plugin-react';
+import solidPlugin from 'vite-plugin-solid';
+import tsconfigPaths from 'vite-tsconfig-paths';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [solidPlugin(), tsconfigPaths()],
+  server: {
+    hmr: true,
+    port: 3000,
+  },
+  build: {
+    chunkSizeWarningLimit: 1000,
+    emptyOutDir: true,
+    target: 'esnext',
+  },
   test: {
     clearMocks: true,
     environment: 'jsdom',
