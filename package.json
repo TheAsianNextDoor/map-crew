@@ -10,6 +10,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@solidjs/router": "^0.8.2",
     "leaflet": "^1.9.4",
     "solid-js": "^1.7.5",
     "zod": "^3.21.4"
@@ -44,7 +45,6 @@
     "npm-check-updates": "^16.10.12",
     "postcss": "8.4.23",
     "prettier": "^2.8.8",
-    "solid-testing-library": "^0.5.1",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4",
     "vite": "^4.3.9",
