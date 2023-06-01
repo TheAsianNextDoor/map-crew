@@ -19,6 +19,6 @@
     "paths": {
       "~/*": ["./*"]
     },
-    "types": ["node", "vitest/globals", "vite/client", "@testing-library/jest-dom"]
+    "types": ["node", "vitest/globals", "vite/client", "@solidjs/testing-library"]
   }
 }

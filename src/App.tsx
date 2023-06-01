@@ -20,7 +20,6 @@ const App: Component = () => {
 
   return (
     <div>
-      hello
       <div ref={mapDiv} id="map" />
     </div>
   );
