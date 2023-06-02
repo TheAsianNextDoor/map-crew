@@ -1,8 +1,11 @@
 /* @refresh reload */
 import { render } from 'solid-js/web';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import 'solid-devtools';
+
+import App from './App';
 
 import './index.css';
-import App from './App';
 
 const root = document.getElementById('root');
 

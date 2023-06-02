@@ -1,11 +1,20 @@
 /// <reference types="vitest" />
 
+import suidPlugin from '@suid/vite-plugin';
+import devtools from 'solid-devtools/vite';
 import solidPlugin from 'vite-plugin-solid';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  plugins: [solidPlugin(), tsconfigPaths()],
+  plugins: [
+    devtools({
+      autoname: true,
+    }),
+    solidPlugin(),
+    suidPlugin(),
+    tsconfigPaths(),
+  ],
   server: {
     hmr: true,
     port: 3000,
